@@ -2,8 +2,8 @@
 //  HTTPStatusCode.swift
 //  CRMClient
 //
-//  Created by Nurzhan Ababakirov on 3/5/20.
-//  Copyright © 2020 Nurzhan Ababakirov. All rights reserved.
+//  Created by Dastan Mambetaliev on 14/3/21.
+//  Copyright © 2021 Dastan Mambetaliev. All rights reserved.
 //
 
 import Foundation
