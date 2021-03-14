@@ -6,6 +6,6 @@ target 'WeatherAppV2' do
   use_frameworks!
 
   # Pods for WeatherAppV2
-pod 'Alamofire'
+pod 'Alamofire', '~> 4.9.1'
 
 end

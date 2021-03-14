@@ -24,7 +24,7 @@ class HTTPRequestManager {
         
         let apiUrl = url
         
-        AF.request(apiUrl, method: method, parameters: parameters, encoding: JSONEncoding.default , headers: header).responseData { (response) in
+        Alamofire.request(apiUrl, method: method, parameters: parameters, encoding: JSONEncoding.default , headers: header).responseData { (response) in
             
             guard response.response != nil else {
                 error(Constants.Network.ErrorMessage.UNABLE_LOAD_DATA)

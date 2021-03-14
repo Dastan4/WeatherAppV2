@@ -13,12 +13,8 @@
 		C075215425F8ED5E006703C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075215225F8ED5E006703C5 /* Main.storyboard */; };
 		C075215625F8ED5F006703C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C075215525F8ED5F006703C5 /* Assets.xcassets */; };
 		C075215925F8ED5F006703C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C075215725F8ED5F006703C5 /* LaunchScreen.storyboard */; };
-		C075216F25F8EEFF006703C5 /* HourlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075216D25F8EEFF006703C5 /* HourlyTableViewCell.swift */; };
-		C075217025F8EEFF006703C5 /* HourlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C075216E25F8EEFF006703C5 /* HourlyTableViewCell.xib */; };
 		C075217425F8EF10006703C5 /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075217225F8EF10006703C5 /* WeatherTableViewCell.swift */; };
 		C075217925F8F172006703C5 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075217825F8F172006703C5 /* WeatherAPI.swift */; };
-		C075217D25F8F201006703C5 /* WeatherForDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075217C25F8F201006703C5 /* WeatherForDays.swift */; };
-		C075218325F8F80A006703C5 /* NetworkingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075218225F8F80A006703C5 /* NetworkingModel.swift */; };
 		C075218725F94DFD006703C5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075218625F94DFD006703C5 /* Model.swift */; };
 		C075219225F954F8006703C5 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075218D25F954F8006703C5 /* HTTPStatusCode.swift */; };
 		C075219325F954F8006703C5 /* HTTPRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C075218E25F954F8006703C5 /* HTTPRequestManager.swift */; };
@@ -39,12 +35,8 @@
 		C075215525F8ED5F006703C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C075215825F8ED5F006703C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C075215A25F8ED5F006703C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C075216D25F8EEFF006703C5 /* HourlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTableViewCell.swift; sourceTree = "<group>"; };
-		C075216E25F8EEFF006703C5 /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
 		C075217225F8EF10006703C5 /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		C075217825F8F172006703C5 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
-		C075217C25F8F201006703C5 /* WeatherForDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForDays.swift; sourceTree = "<group>"; };
-		C075218225F8F80A006703C5 /* NetworkingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingModel.swift; sourceTree = "<group>"; };
 		C075218625F94DFD006703C5 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = ../../../Downloads/Model.swift; sourceTree = "<group>"; };
 		C075218D25F954F8006703C5 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		C075218E25F954F8006703C5 /* HTTPRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestManager.swift; sourceTree = "<group>"; };
@@ -97,7 +89,6 @@
 			children = (
 				C075218C25F954BD006703C5 /* Server */,
 				C075217725F8F157006703C5 /* Models */,
-				C075216525F8EEA3006703C5 /* HourlyCollectionCell */,
 				C075216425F8EE85006703C5 /* WeatherCell */,
 				C075214C25F8ED5E006703C5 /* AppDelegate.swift */,
 				C075214E25F8ED5E006703C5 /* SceneDelegate.swift */,
@@ -119,21 +110,10 @@
 			path = WeatherCell;
 			sourceTree = "<group>";
 		};
-		C075216525F8EEA3006703C5 /* HourlyCollectionCell */ = {
-			isa = PBXGroup;
-			children = (
-				C075216D25F8EEFF006703C5 /* HourlyTableViewCell.swift */,
-				C075216E25F8EEFF006703C5 /* HourlyTableViewCell.xib */,
-			);
-			path = HourlyCollectionCell;
-			sourceTree = "<group>";
-		};
 		C075217725F8F157006703C5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				C075217825F8F172006703C5 /* WeatherAPI.swift */,
-				C075217C25F8F201006703C5 /* WeatherForDays.swift */,
-				C075218225F8F80A006703C5 /* NetworkingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,7 +150,7 @@
 				C075214525F8ED5E006703C5 /* Sources */,
 				C075214625F8ED5E006703C5 /* Frameworks */,
 				C075214725F8ED5E006703C5 /* Resources */,
-				F27B6D624C4E07EC696F75C2 /* [CP] Embed Pods Frameworks */,
+				EC0FA584D36EFCDF397DF302 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -220,7 +200,6 @@
 			files = (
 				C075215925F8ED5F006703C5 /* LaunchScreen.storyboard in Resources */,
 				C075215625F8ED5F006703C5 /* Assets.xcassets in Resources */,
-				C075217025F8EEFF006703C5 /* HourlyTableViewCell.xib in Resources */,
 				C075215425F8ED5E006703C5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +229,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F27B6D624C4E07EC696F75C2 /* [CP] Embed Pods Frameworks */ = {
+		EC0FA584D36EFCDF397DF302 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -277,16 +256,13 @@
 				C075219225F954F8006703C5 /* HTTPStatusCode.swift in Sources */,
 				C075218725F94DFD006703C5 /* Model.swift in Sources */,
 				C075217425F8EF10006703C5 /* WeatherTableViewCell.swift in Sources */,
-				C075217D25F8F201006703C5 /* WeatherForDays.swift in Sources */,
 				C075219625F954F8006703C5 /* ServerManager.swift in Sources */,
 				C075215125F8ED5E006703C5 /* ViewController.swift in Sources */,
 				C075214D25F8ED5E006703C5 /* AppDelegate.swift in Sources */,
 				C075217925F8F172006703C5 /* WeatherAPI.swift in Sources */,
-				C075216F25F8EEFF006703C5 /* HourlyTableViewCell.swift in Sources */,
 				C075219525F954F8006703C5 /* Extensions.swift in Sources */,
 				C075214F25F8ED5E006703C5 /* SceneDelegate.swift in Sources */,
 				C075219325F954F8006703C5 /* HTTPRequestManager.swift in Sources */,
-				C075218325F8F80A006703C5 /* NetworkingModel.swift in Sources */,
 				C075219425F954F8006703C5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,7 +13,8 @@ class WeatherTableViewCell: UITableViewCell {
     @IBOutlet var highTempLabel: UILabel!
     @IBOutlet var lowTempLabel: UILabel!
     @IBOutlet var iconImageView: UIImageView!
-    @IBOutlet var cityLabel: UILabel!
+    
+    var updateDate = [SimpleDate]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,44 +26,53 @@ class WeatherTableViewCell: UITableViewCell {
         
         
     }
-    //    ???
-    static let identifier = "WeatherTableViewCell"
     
-    static func nib() -> UINib {
-        return UINib(nibName: "WeatherTableViewCell", bundle: nil)
-    }
-    
-    func configure(weather: WeatherResponse) {
-        self.highTempLabel.text = String(weather.list[0].main.temp_max!)
-        self.lowTempLabel.text = String(weather.list[0].main.temp_min!)
-        self.dayLabel.text = weather.list[0].dt_txt
-        self.iconImageView.image = UIImage(named: "clear")
-        self.cityLabel.text = weather.city.name
-    }
-    
-    
-    
-    //    настройка ячейки
-    //    func configure(with model: WeatherResponseModel) {
-    //
-    //        for i in 0 ..< model.weather.count {
-    //            self.lowTempLabel.text = "\(Int(model.weather[i].temperature_min))°"
-    //            self.highTempLabel.text = "\(Int(model.weather[i].temperature_max))°"
-    //
-    //            self.dayLabel.text = getDayForDate(Date(timeIntervalSince1970: Double(model.weather[i].dateText)!))
-    //    //        default icon
-    //            self.iconImageView.image = UIImage(named: "clear")
-    //        }
-    //    }
-    
-    func getDayForDate(_ date: Date?) -> String {
-        guard let inputDate = date else {
-            return ""
+    func configureWeek(weather: List) {
+        self.highTempLabel.text = "\(Int(weather.main.temp_max))"
+        self.lowTempLabel.text = "\(Int(weather.main.temp_min))"
+        self.dayLabel.text = getDayForDate(weather.dt_txt)
+        if weather.weather[0].main == "Clouds" {
+            self.iconImageView.image = UIImage(named: "cloud")
+        } else if weather.weather[0].main == "Snow" {
+            self.iconImageView.image = UIImage(named: "snow")
+        } else if weather.weather[0].main == "Sun" {
+            self.iconImageView.image = UIImage(named: "sun")
+        } else if weather.weather[0].main == "Rain" {
+            self.iconImageView.image = UIImage(named: "rain")
         }
-        //        получаем день по дате
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM"
-        return formatter.string(from: inputDate)
     }
     
+    
+    
+    func simpleWeatherDate (weather: WeatherResponse) {
+        DispatchQueue.main.async {
+            for i in 0..<weather.list.count {
+                let first = weather.list[i].dt_txt.suffix(8)
+                let second = first.prefix(2)
+                if second == "03" {
+                    self.updateDate[0].night.append(weather.list[i])
+                } else if second == "15" {
+                    self.updateDate[0].day.append(weather.list[i])
+                }
+            }
+        }
+    }
+    
+    
+//    изъятие только  месяца и числа и времени из dt_txt
+    func getDayForDate(_ date: String) -> String {
+        let allDate = date.prefix(10)
+        let dates = allDate.suffix(5)
+        let day = dates.suffix(2)
+        let month = dates.prefix(2)
+        let time = date.suffix(8)
+        let timeWithoutSec = time.prefix(5)
+
+        return "\(day).\(month) \(timeWithoutSec)"
+    }
+}
+
+struct SimpleDate {
+    var day = [List]()
+    var night = [List]()
 }
